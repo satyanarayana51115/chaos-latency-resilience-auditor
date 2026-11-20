@@ -47,10 +47,15 @@ pytest -v -rA --html=reports/chaos_resilience_report.html --self-contained-html
 
 ## 📊 Execution Proof
 
-​test_01_healthy_endpoint_fast_response: PASSED (Sub-second response on attempt 1)
-​test_02_latency_spike_triggers_sla_timeout_fallback: PASSED (Cut off a 3.0s hang at 1.5s via SLA fallback guardrail)
-​test_03_flaky_503_chaos_self_heals_via_retries: PASSED (Self-healed transient HTTP 503 failures on attempt 3 via exponential backoff)
+* **`test_01_healthy_endpoint_fast_response`:** `PASSED` (Sub-second response on attempt 1)
+* **`test_02_latency_spike_triggers_sla_timeout_fallback`:** `PASSED` (Cut off a `3.0s` hang at `1.5s` via SLA fallback guardrail)
+* **`test_03_flaky_503_chaos_self_heals_via_retries`:** `PASSED` (Self-healed transient `HTTP 503` failures on attempt 3 via exponential backoff)
 
-​1. Terminal Chaos Audit Results
+### 1. Terminal Chaos Audit Results
 
-​2. Pytest HTML Resilience Report
+![Terminal Chaos Audit](assets/terminal_chaos_audit.png)
+
+### 2. Pytest HTML Resilience Report
+
+![HTML Chaos Report](assets/html_chaos_report.png)
+
